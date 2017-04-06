@@ -48,7 +48,6 @@ def load_rosbag(directory, topics, bridge):
             yield image
         bag.close()
 
-
 class ROSBagImageDataset(object):
 
     def __init__(self,
@@ -71,7 +70,7 @@ class ROSBagImageDataset(object):
         else:
             shapes = [(None, None, 3)]
 
-        self.queue = tf.RandomShuffleQueue(capacity, min_after_dequeue,
+        self.queue = tf.FIFOQueue(capacity, min_after_dequeue,
                                          ['float32'],
                                          shapes=shapes)
         self.enqueue = self.queue.enqueue([self._placeholder])

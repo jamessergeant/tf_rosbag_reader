@@ -9,8 +9,8 @@ import tensorflow as tf
 
 from tf_rosbag_reader import ROSBagImageDataset
 
-BATCH_SIZE = 1
-NUM_STEPS = 10
+BATCH_SIZE = 10
+NUM_STEPS = 1000
 DATA_DIRECTORY = '/home/james/co/tf_rosbag_reader/test'
 TOPICS = ['/realsense/rgb/image_raw']
 
